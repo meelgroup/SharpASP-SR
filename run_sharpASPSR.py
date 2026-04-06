@@ -64,7 +64,7 @@ print('The formulas \phi_1 and \phi_2 are computed already !!!')
 # count the models of the first formula
 # print('timeout {0}s /usr/bin/time --verbose -o first_{2}.timeout ./{1} -v 0 --maxcache 4000 model_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
 print('Invoking the first counter call ... ')
-os.system('timeout {0}s /usr/bin/time --verbose -o first_{2}.timeout ./{1} -v 0 --maxcache 4000 model_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
+os.system('timeout {0}s /usr/bin/time --verbose -o first_{2}.timeout ./{1} --verb 0 --prob 0 --maxcache 4000 model_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
 
 out_file = open('output_{0}.out'.format(args.i))
 for line in out_file:
@@ -91,7 +91,7 @@ if (total_time <= 0):
 
 print('Invoking the second counter call ... ')
 # print('timeout {0}s /usr/bin/time --verbose -o second_{2}.timeout ./{1} -v 0 --maxcache 4000 non_sm_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
-os.system('timeout {0}s /usr/bin/time --verbose -o second_{2}.timeout ./{1} -v 0 --maxcache 4000 non_sm_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
+os.system('timeout {0}s /usr/bin/time --verbose -o second_{2}.timeout ./{1} --verb 0 --prob 0 --maxcache 4000 non_sm_{2}.out > output_{2}.out'.format(total_time, ganak_binary, args.i))
 out_file = open('output_{0}.out'.format(args.i))
 for line in out_file:
     if line.startswith("c s exact arb int"):
