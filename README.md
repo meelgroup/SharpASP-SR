@@ -14,7 +14,7 @@ sudo apt-get install -y build-essential gringo python3-pip
 
 
 # Build and Download ganak
-SharpASP-SR uses ganak as projected model counter. The best way to obtain ganak is to obtain its released static binaries from [https://github.com/meelgroup/ganak](https://github.com/meelgroup/ganak). 
+SharpASP-SR uses ganak as projected model counter. The {\em best} way to obtain ganak is to obtain its released static binaries from [https://github.com/meelgroup/ganak](https://github.com/meelgroup/ganak). 
 
 Build all required binaries as follows:
 ```
@@ -22,7 +22,7 @@ chmod +x build.sh
 ./build.sh
 ```
 
-The build compile required binaries and also download a compiled binary of ganak.
+The `build.sh` compiles required binaries and also downloads a compiled binary of [ganak](https://github.com/meelgroup/ganak).
 
 
 # Run sharpASP-SR
