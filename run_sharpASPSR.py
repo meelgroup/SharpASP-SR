@@ -1,18 +1,20 @@
-import os, argparse, subprocess
+import os, argparse, subprocess, shutil
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i','--i', help='input ASP program', required=True)
 parser.add_argument('-t','--t', help='timeout', default=5000, required=False)
 args = parser.parse_args()
 ganak_binary = 'ganak'
-grounder = 'gringo'
 clark = 'clark'
 if not os.path.exists('./{0}'.format(ganak_binary)):
     print("Tool {0} does not exist".format(ganak_binary))
     exit(1)
 
-if not os.path.exists('./{0}'.format(grounder)):
-    print("Tool {0} does not exist".format(grounder))
+if shutil.which("gringo"):
+    # print("Gringo Installed")
+    pass
+else:
+    print("gringo is not installed. Please install gringo")
     exit(1)
 
 if not os.path.exists('./{0}'.format(clark)):
@@ -23,7 +25,7 @@ if not os.path.exists(args.i):
     print('input ' + args.i + ' does not exist')
     exit(1)
 
-os.system('./gringo -o smodels {0} | ./clark -dimacs -output {0}'.format(args.i))
+os.system('gringo -o smodels {0} | ./clark -dimacs -output {0}'.format(args.i))
 
 if not os.path.exists('model_' + args.i + '.out'):
     print('Cannot compute formulas \phi_1 and \phi_2 !!!')

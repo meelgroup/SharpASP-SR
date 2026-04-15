@@ -7,21 +7,30 @@ git clone --recurse-submodules git@github.com:meelgroup/SharpASP-SR.git
 ```
 
 # Dependencies
-- **Ganak** The recommeneded way to have Ganak is to obtain its released binaries from their [github](https://github.com/meelgroup/ganak). The `bin` directory also has a ganak binary. 
-- **Clark**: The clark completion and copy operation implementation is given with submodule in the directory `Compl`
-- **gringo**: we used gringo as grounder. You can install it from [potassco](https://potassco.org/clingo/). One static binary of gringo is in the `bin` directory.
+Install:
+```
+sudo apt-get install -y build-essential gringo python3-pip
+```
 
-# Build Compl
-First you need to build Compl. This is the implementation to run Clark completion and copy operations. 
+
+# Build and Download ganak
+SharpASP-SR uses ganak as projected model counter. The best way to obtain ganak is to obtain its released static binaries from [https://github.com/meelgroup/ganak](https://github.com/meelgroup/ganak). 
+
+Build all required binaries as follows:
 ```
-cd Compl
-make
+chmod +x build.sh
+./build.sh
 ```
-After compling, you should see the binary `clark` in the directory.
+
+The build compile required binaries and also download a compiled binary of ganak.
+
 
 # Run sharpASP-SR
 
-Make sure that the binaries (`ganak`, `gringo`, and `clark`) are present in the current directory.
+Make sure that the binaries (`ganak`, and `clark`) are present in the current directory.
+```
+ls clark ganak
+```
 
 **Run:** execute `run_sharpASPSR.py` as follow:
 ```

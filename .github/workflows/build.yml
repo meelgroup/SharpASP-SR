@@ -1,0 +1,31 @@
+
+name: CI Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Install libraries
+        run: sudo apt-get update && sudo apt-get install -y build-essential gringo python3-pip
+
+      - name: Run build and download
+        run: |
+          chmod +x build.sh
+          ./build.sh
+          
+      - name: Run SharpASP-SR
+        run: |
+          python run_sharpASPSR.py -i Snf1_pathway.bnet.lp 2>&1 | tee /tmp/out.txt
+          grep -q "SharpASP-SR: Number of answer sets: " /tmp/out.txt
