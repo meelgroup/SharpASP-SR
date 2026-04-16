@@ -26,13 +26,7 @@ The `build.sh` compiles required binaries and also downloads a compiled binary o
 
 
 # Run sharpASP-SR
-
-Make sure that the binaries (`ganak`, and `clark`) are present in the current directory.
-```
-ls clark ganak
-```
-
-**Run:** execute `run_sharpASPSR.py` as follow:
+execute `run_sharpASPSR.py` as follow:
 ```
 python run_sharpASPSR.py -i Snf1_pathway.bnet.lp
 ```
@@ -45,7 +39,7 @@ The input program has `10096027719780900754667077632` answer sets.
 
 
 # Benchmark and Experimental logfiles
-The benchmark and experimental logfiles are available at: [zenodo link](https://zenodo.org/records/15710200)
+The benchmark and experimental logfiles are available at: [zenodo link](https://zenodo.org/records/19607199)
 
 # Publication
 
