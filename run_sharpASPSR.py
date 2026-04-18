@@ -33,15 +33,17 @@ if not os.path.exists(args.i):
     sys.exit(1)
 
 
-# gringo -o smodels input | ./clark -dimacs -output input
 try:
     gringo_proc = subprocess.Popen(
         ["gringo", "-o", "smodels", args.i],
         stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
     )
-    clark_proc = subprocess.run(
+    subprocess.run(
         [f"./{clark}", "-dimacs", "-output", args.i],
         stdin=gringo_proc.stdout,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
         check=True,
     )
     gringo_proc.stdout.close()
@@ -122,7 +124,7 @@ first_count, first_time = run_ganak(
     f"output_{args.i}.out",
     total_time,
 )
-print("SharpASP-SR: first count done, count: {0} and time: {1}".format(first_count, first_time))
+print("SharpASP-SR: first count done, count: {0} and time: {1:.3f}".format(first_count, first_time))
 
 total_time = total_time - first_time
 if total_time <= 0:
@@ -135,7 +137,7 @@ second_count, second_time = run_ganak(
     f"output_{args.i}.out",
     total_time,
 )
-print("SharpASP-SR: second count done, count: {0} and time: {1}".format(second_count, second_time))
+print("SharpASP-SR: second count done, count: {0} and time: {1:.3f}".format(second_count, second_time))
 
 print("SharpASP-SR: Number of answer sets: {0}".format(first_count - second_count))
-print("SharpASP-SR: Total time: {0}".format(first_time + second_time))
+print("SharpASP-SR: Total time: {0:.3f}".format(first_time + second_time))
