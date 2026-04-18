@@ -15,6 +15,5 @@ wget https://github.com/meelgroup/ganak/releases/download/release%2Fv2.6.1/ganak
 tar -xvzf ganak-v2.6.1-linux-amd64.tar.gz
 
 echo "Done. Copied binaries to:"
-echo "  $ROOT_DIR/scripts/hashcount"
-echo "  $ROOT_DIR/scripts/td"
-echo "  $ROOT_DIR/scripts/flow_cutter_pace17"
+echo "  $ROOT_DIR/ganak"
+echo "  $ROOT_DIR/clark"
