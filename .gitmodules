@@ -1,4 +1,4 @@
 
 [submodule "Compl"]
 	path = Compl
-	url = git@github.com:mahi045/Compl.git
+	url = https://github.com/mahi045/Compl.git

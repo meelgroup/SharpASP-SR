@@ -3,7 +3,7 @@ SharpASP-SR is an answer set counter for disjunctive logic programs. The publica
 
 # Clone the repo
 ```
-git clone --recurse-submodules git@github.com:meelgroup/SharpASP-SR.git
+git clone --recurse-submodules https://github.com/meelgroup/SharpASP-SR.git
 ```
 
 # Dependencies
@@ -14,7 +14,7 @@ sudo apt-get install -y build-essential gringo python3-pip
 
 
 # Build and Download ganak
-SharpASP-SR uses ganak as projected model counter. The {\em best} way to obtain ganak is to obtain its released static binaries from [https://github.com/meelgroup/ganak](https://github.com/meelgroup/ganak). 
+SharpASP-SR uses ganak as projected model counter. The _best_ way to obtain ganak is to obtain its released static binaries from [https://github.com/meelgroup/ganak](https://github.com/meelgroup/ganak). 
 
 Build all required binaries as follows:
 ```
@@ -26,7 +26,7 @@ The `build.sh` compiles required binaries and also downloads a compiled binary o
 
 
 # Run sharpASP-SR
-execute `run_sharpASPSR.py` as follow:
+execute `run_sharpASPSR.py` as follows:
 ```
 python run_sharpASPSR.py -i Snf1_pathway.bnet.lp
 ```
