@@ -39,7 +39,7 @@ The input program has `10096027719780900754667077632` answer sets.
 
 
 # Benchmark and Experimental logfiles
-The benchmark and experimental logfiles are available at: [zenodo link](https://zenodo.org/records/19640592)
+The benchmark and experimental logfiles are available at: [zenodo link](https://zenodo.org/records/19665845)
 
 # Publication
 
